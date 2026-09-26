@@ -1,0 +1,11 @@
+:root {
+  --r-background-color: #07111f;
+  --r-main-color: #e5edf7;
+  --r-heading-color: #f8fafc;
+  --r-link-color: #22d3ee;
+  --r-link-color-hover: #67e8f9;
+}
+
+.reveal .slides {
+  text-align: left;
+}

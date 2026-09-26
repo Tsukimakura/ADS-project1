@@ -1,0 +1,19 @@
+{
+  "name": "ads-project1",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "charts": "node scripts/generate-charts.mjs"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "devDependencies": {
+    "reveal.js": "6.0.2",
+    "vite": "8.3.1"
+  }
+}
