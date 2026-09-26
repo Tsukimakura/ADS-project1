@@ -83,16 +83,14 @@ B+ 树采用相同算法测试两个阶数，因此五类数据结构对应六�
 
 <div class="two-column code-layout">
 
-```c
-typedef struct TreeInterface {
+<pre><code class="language-c">typedef struct TreeInterface {
     void *object;
     void (*insert)(void *, int);
     void (*remove)(void *, int);
     int  (*contains)(void *, int);
     void (*destroy)(void *);
     const char *name;
-} TreeInterface;
-```
+} TreeInterface;</code></pre>
 
 <div class="stack-list">
   <div><b>object</b><span>Concrete tree state hidden behind <code>void *</code></span></div>
@@ -351,17 +349,15 @@ Note:
 
 <div class="two-column code-layout">
 
-```c
-insert_start = current_time_ns();
-for (i = 0; i < n; ++i)
+<pre><code class="language-c">insert_start = current_time_ns();
+for (i = 0; i &lt; n; ++i)
     tree.insert(tree.object, insert_keys[i]);
 insert_end = current_time_ns();
 
 delete_start = current_time_ns();
-for (i = 0; i < n; ++i)
+for (i = 0; i &lt; n; ++i)
     tree.remove(tree.object, delete_keys[i]);
-delete_end = current_time_ns();
-```
+delete_end = current_time_ns();</code></pre>
 
 <div class="stack-list">
   <div><b>CLOCK_MONOTONIC</b><span>Unaffected by wall-clock changes</span></div>
@@ -639,29 +635,25 @@ Note:
 
 <div>
 
-### Tree benchmark
+<h3>Tree benchmark</h3>
 
-```bash
-make benchmark
-./benchmark > result.csv
-```
+<pre><code class="language-bash">make benchmark
+./benchmark &gt; result.csv</code></pre>
 
-Produces the 126-row dataset.
+<p>Produces the 126-row dataset.</p>
 
 </div>
 
 <div>
 
-### Web slides
+<h3>Web slides</h3>
 
-```bash
-npm install
+<pre><code class="language-bash">npm install
 npm run charts
 npm run dev
-npm run build
-```
+npm run build</code></pre>
 
-Builds a static Reveal.js website.
+<p>Builds a static Reveal.js website.</p>
 
 </div>
 
