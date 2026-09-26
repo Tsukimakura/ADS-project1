@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="Increasing insert · reverse delete">
+<rect width="1200" height="620" rx="24" fill="#0b1220"/>
+<text x="92" y="42" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700">Increasing insert · reverse delete</text>
+<text x="92" y="69" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16">Total time · logarithmic axes · lower is better</text>
+<line x1="92" y1="504" x2="1158" y2="504" stroke="#243148"/>
+<text x="78" y="509" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">0.01ms</text>
+<line x1="92" y1="444.85714285714283" x2="1158" y2="444.85714285714283" stroke="#243148"/>
+<text x="78" y="449.85714285714283" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">0.1ms</text>
+<line x1="92" y1="385.7142857142857" x2="1158" y2="385.7142857142857" stroke="#243148"/>
+<text x="78" y="390.7142857142857" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">1ms</text>
+<line x1="92" y1="326.57142857142856" x2="1158" y2="326.57142857142856" stroke="#243148"/>
+<text x="78" y="331.57142857142856" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">10ms</text>
+<line x1="92" y1="267.42857142857144" x2="1158" y2="267.42857142857144" stroke="#243148"/>
+<text x="78" y="272.42857142857144" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">100ms</text>
+<line x1="92" y1="208.2857142857143" x2="1158" y2="208.2857142857143" stroke="#243148"/>
+<text x="78" y="213.2857142857143" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">1s</text>
+<line x1="92" y1="149.14285714285714" x2="1158" y2="149.14285714285714" stroke="#243148"/>
+<text x="78" y="154.14285714285714" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">10s</text>
+<line x1="92" y1="90" x2="1158" y2="90" stroke="#243148"/>
+<text x="78" y="95" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">100s</text>
+<line x1="92" y1="90" x2="92" y2="504" stroke="#18243a"/>
+<text x="92" y="532" text-anchor="middle" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">1k</text>
+<line x1="252.44898768890198" y1="90" x2="252.44898768890198" y2="504" stroke="#18243a"/>
+<text x="252.44898768890198" y="532" text-anchor="middle" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">2k</text>
+<line x1="464.5510123110982" y1="90" x2="464.5510123110982" y2="504" stroke="#18243a"/>
+<text x="464.5510123110982" y="532" text-anchor="middle" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">5k</text>
+<line x1="625.0000000000001" y1="90" x2="625.0000000000001" y2="504" stroke="#18243a"/>
+<text x="625.0000000000001" y="532" text-anchor="middle" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">10k</text>
+<line x1="785.4489876889016" y1="90" x2="785.4489876889016" y2="504" stroke="#18243a"/>
+<text x="785.4489876889016" y="532" text-anchor="middle" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">20k</text>
+<line x1="997.551012311098" y1="90" x2="997.551012311098" y2="504" stroke="#18243a"/>
+<text x="997.551012311098" y="532" text-anchor="middle" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">50k</text>
+<line x1="1158" y1="90" x2="1158" y2="504" stroke="#18243a"/>
+<text x="1158" y="532" text-anchor="middle" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">100k</text>
+<path d="M 92.0 371.0 L 252.4 341.1 L 464.6 291.9 L 625.0 258.0 L 785.4 223.2 L 997.6 173.5 L 1158.0 135.1" fill="none" stroke="#fb7185" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="92.0" cy="371.0" r="5" fill="#fb7185" stroke="#0b1220" stroke-width="2"><title>Unbalanced BST: N=1000, 1.775 ms</title></circle>
+<circle cx="252.4" cy="341.1" r="5" fill="#fb7185" stroke="#0b1220" stroke-width="2"><title>Unbalanced BST: N=2000, 5.689 ms</title></circle>
+<circle cx="464.6" cy="291.9" r="5" fill="#fb7185" stroke="#0b1220" stroke-width="2"><title>Unbalanced BST: N=5000, 38.498 ms</title></circle>
+<circle cx="625.0" cy="258.0" r="5" fill="#fb7185" stroke="#0b1220" stroke-width="2"><title>Unbalanced BST: N=10000, 144.626 ms</title></circle>
+<circle cx="785.4" cy="223.2" r="5" fill="#fb7185" stroke="#0b1220" stroke-width="2"><title>Unbalanced BST: N=20000, 560.314 ms</title></circle>
+<circle cx="997.6" cy="173.5" r="5" fill="#fb7185" stroke="#0b1220" stroke-width="2"><title>Unbalanced BST: N=50000, 3870.686 ms</title></circle>
+<circle cx="1158.0" cy="135.1" r="5" fill="#fb7185" stroke="#0b1220" stroke-width="2"><title>Unbalanced BST: N=100000, 17294.236 ms</title></circle>
+<path d="M 92.0 456.8 L 252.4 434.6 L 464.6 409.8 L 625.0 391.7 L 785.4 372.4 L 997.6 347.8 L 1158.0 328.0" fill="none" stroke="#60a5fa" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="92.0" cy="456.8" r="5" fill="#60a5fa" stroke="#0b1220" stroke-width="2"><title>AVL: N=1000, 0.063 ms</title></circle>
+<circle cx="252.4" cy="434.6" r="5" fill="#60a5fa" stroke="#0b1220" stroke-width="2"><title>AVL: N=2000, 0.149 ms</title></circle>
+<circle cx="464.6" cy="409.8" r="5" fill="#60a5fa" stroke="#0b1220" stroke-width="2"><title>AVL: N=5000, 0.392 ms</title></circle>
+<circle cx="625.0" cy="391.7" r="5" fill="#60a5fa" stroke="#0b1220" stroke-width="2"><title>AVL: N=10000, 0.791 ms</title></circle>
+<circle cx="785.4" cy="372.4" r="5" fill="#60a5fa" stroke="#0b1220" stroke-width="2"><title>AVL: N=20000, 1.682 ms</title></circle>
+<circle cx="997.6" cy="347.8" r="5" fill="#60a5fa" stroke="#0b1220" stroke-width="2"><title>AVL: N=50000, 4.378 ms</title></circle>
+<circle cx="1158.0" cy="328.0" r="5" fill="#60a5fa" stroke="#0b1220" stroke-width="2"><title>AVL: N=100000, 9.441 ms</title></circle>
+<path d="M 92.0 468.6 L 252.4 445.6 L 464.6 422.4 L 625.0 405.2 L 785.4 385.2 L 997.6 360.6 L 1158.0 344.0" fill="none" stroke="#2dd4bf" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="92.0" cy="468.6" r="5" fill="#2dd4bf" stroke="#0b1220" stroke-width="2"><title>Splay: N=1000, 0.040 ms</title></circle>
+<circle cx="252.4" cy="445.6" r="5" fill="#2dd4bf" stroke="#0b1220" stroke-width="2"><title>Splay: N=2000, 0.097 ms</title></circle>
+<circle cx="464.6" cy="422.4" r="5" fill="#2dd4bf" stroke="#0b1220" stroke-width="2"><title>Splay: N=5000, 0.240 ms</title></circle>
+<circle cx="625.0" cy="405.2" r="5" fill="#2dd4bf" stroke="#0b1220" stroke-width="2"><title>Splay: N=10000, 0.469 ms</title></circle>
+<circle cx="785.4" cy="385.2" r="5" fill="#2dd4bf" stroke="#0b1220" stroke-width="2"><title>Splay: N=20000, 1.020 ms</title></circle>
+<circle cx="997.6" cy="360.6" r="5" fill="#2dd4bf" stroke="#0b1220" stroke-width="2"><title>Splay: N=50000, 2.659 ms</title></circle>
+<circle cx="1158.0" cy="344.0" r="5" fill="#2dd4bf" stroke="#0b1220" stroke-width="2"><title>Splay: N=100000, 5.082 ms</title></circle>
+<path d="M 92.0 457.3 L 252.4 436.7 L 464.6 411.9 L 625.0 392.9 L 785.4 375.9 L 997.6 350.7 L 1158.0 330.7" fill="none" stroke="#c084fc" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="92.0" cy="457.3" r="5" fill="#c084fc" stroke="#0b1220" stroke-width="2"><title>Red-Black: N=1000, 0.062 ms</title></circle>
+<circle cx="252.4" cy="436.7" r="5" fill="#c084fc" stroke="#0b1220" stroke-width="2"><title>Red-Black: N=2000, 0.137 ms</title></circle>
+<circle cx="464.6" cy="411.9" r="5" fill="#c084fc" stroke="#0b1220" stroke-width="2"><title>Red-Black: N=5000, 0.360 ms</title></circle>
+<circle cx="625.0" cy="392.9" r="5" fill="#c084fc" stroke="#0b1220" stroke-width="2"><title>Red-Black: N=10000, 0.755 ms</title></circle>
+<circle cx="785.4" cy="375.9" r="5" fill="#c084fc" stroke="#0b1220" stroke-width="2"><title>Red-Black: N=20000, 1.468 ms</title></circle>
+<circle cx="997.6" cy="350.7" r="5" fill="#c084fc" stroke="#0b1220" stroke-width="2"><title>Red-Black: N=50000, 3.905 ms</title></circle>
+<circle cx="1158.0" cy="330.7" r="5" fill="#c084fc" stroke="#0b1220" stroke-width="2"><title>Red-Black: N=100000, 8.514 ms</title></circle>
+<path d="M 92.0 413.7 L 252.4 398.7 L 464.6 374.3 L 625.0 355.1 L 785.4 338.0 L 997.6 310.7 L 1158.0 290.3" fill="none" stroke="#fb923c" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="92.0" cy="413.7" r="5" fill="#fb923c" stroke="#0b1220" stroke-width="2"><title>B+ (order 3): N=1000, 0.336 ms</title></circle>
+<circle cx="252.4" cy="398.7" r="5" fill="#fb923c" stroke="#0b1220" stroke-width="2"><title>B+ (order 3): N=2000, 0.603 ms</title></circle>
+<circle cx="464.6" cy="374.3" r="5" fill="#fb923c" stroke="#0b1220" stroke-width="2"><title>B+ (order 3): N=5000, 1.558 ms</title></circle>
+<circle cx="625.0" cy="355.1" r="5" fill="#fb923c" stroke="#0b1220" stroke-width="2"><title>B+ (order 3): N=10000, 3.295 ms</title></circle>
+<circle cx="785.4" cy="338.0" r="5" fill="#fb923c" stroke="#0b1220" stroke-width="2"><title>B+ (order 3): N=20000, 6.414 ms</title></circle>
+<circle cx="997.6" cy="310.7" r="5" fill="#fb923c" stroke="#0b1220" stroke-width="2"><title>B+ (order 3): N=50000, 18.543 ms</title></circle>
+<circle cx="1158.0" cy="290.3" r="5" fill="#fb923c" stroke="#0b1220" stroke-width="2"><title>B+ (order 3): N=100000, 41.107 ms</title></circle>
+<path d="M 92.0 484.8 L 252.4 462.5 L 464.6 437.6 L 625.0 415.3 L 785.4 396.0 L 997.6 371.8 L 1158.0 350.9" fill="none" stroke="#facc15" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="92.0" cy="484.8" r="5" fill="#facc15" stroke="#0b1220" stroke-width="2"><title>B+ (order 100): N=1000, 0.021 ms</title></circle>
+<circle cx="252.4" cy="462.5" r="5" fill="#facc15" stroke="#0b1220" stroke-width="2"><title>B+ (order 100): N=2000, 0.050 ms</title></circle>
+<circle cx="464.6" cy="437.6" r="5" fill="#facc15" stroke="#0b1220" stroke-width="2"><title>B+ (order 100): N=5000, 0.133 ms</title></circle>
+<circle cx="625.0" cy="415.3" r="5" fill="#facc15" stroke="#0b1220" stroke-width="2"><title>B+ (order 100): N=10000, 0.316 ms</title></circle>
+<circle cx="785.4" cy="396.0" r="5" fill="#facc15" stroke="#0b1220" stroke-width="2"><title>B+ (order 100): N=20000, 0.671 ms</title></circle>
+<circle cx="997.6" cy="371.8" r="5" fill="#facc15" stroke="#0b1220" stroke-width="2"><title>B+ (order 100): N=50000, 1.716 ms</title></circle>
+<circle cx="1158.0" cy="350.9" r="5" fill="#facc15" stroke="#0b1220" stroke-width="2"><title>B+ (order 100): N=100000, 3.872 ms</title></circle>
+<line x1="92" y1="558" x2="120" y2="558" stroke="#fb7185" stroke-width="4"/>
+<text x="130" y="563" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="15">Unbalanced BST</text>
+<line x1="432" y1="558" x2="460" y2="558" stroke="#60a5fa" stroke-width="4"/>
+<text x="470" y="563" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="15">AVL</text>
+<line x1="772" y1="558" x2="800" y2="558" stroke="#2dd4bf" stroke-width="4"/>
+<text x="810" y="563" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="15">Splay</text>
+<line x1="92" y1="585" x2="120" y2="585" stroke="#c084fc" stroke-width="4"/>
+<text x="130" y="590" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="15">Red-Black</text>
+<line x1="432" y1="585" x2="460" y2="585" stroke="#fb923c" stroke-width="4"/>
+<text x="470" y="590" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="15">B+ (order 3)</text>
+<line x1="772" y1="585" x2="800" y2="585" stroke="#facc15" stroke-width="4"/>
+<text x="810" y="590" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="15">B+ (order 100)</text>
+</svg>
