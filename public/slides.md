@@ -206,11 +206,24 @@ Note:
 
 <div class="two-column">
   <div class="diagram-panel rb-diagram">
-    <div><span class="black-node">20</span></div>
-    <i>╱　　　　　　　╲</i>
-    <div><span class="red-node">10</span><span class="red-node">30</span></div>
-    <i>╱　╲　　　　　╱　╲</i>
-    <div class="nil-row"><span>NIL</span><span>NIL</span><span>NIL</span><span>NIL</span></div>
+    <svg class="rb-tree-svg" viewBox="0 0 420 300" role="img" aria-labelledby="rb-tree-title">
+      <title id="rb-tree-title">包含一个黑色根节点、两个红色子节点和四个 NIL 叶节点的红黑树</title>
+      <g class="rb-edges">
+        <line x1="210" y1="78" x2="105" y2="123" />
+        <line x1="210" y1="78" x2="315" y2="123" />
+        <line x1="105" y1="177" x2="50" y2="226" />
+        <line x1="105" y1="177" x2="150" y2="226" />
+        <line x1="315" y1="177" x2="270" y2="226" />
+        <line x1="315" y1="177" x2="370" y2="226" />
+      </g>
+      <g class="rb-node rb-node-black"><circle cx="210" cy="52" r="28" /><text x="210" y="60">20</text></g>
+      <g class="rb-node rb-node-red"><circle cx="105" cy="150" r="28" /><text x="105" y="158">10</text></g>
+      <g class="rb-node rb-node-red"><circle cx="315" cy="150" r="28" /><text x="315" y="158">30</text></g>
+      <g class="rb-nil"><rect x="21" y="226" width="58" height="34" rx="4" /><text x="50" y="249">NIL</text></g>
+      <g class="rb-nil"><rect x="121" y="226" width="58" height="34" rx="4" /><text x="150" y="249">NIL</text></g>
+      <g class="rb-nil"><rect x="241" y="226" width="58" height="34" rx="4" /><text x="270" y="249">NIL</text></g>
+      <g class="rb-nil"><rect x="341" y="226" width="58" height="34" rx="4" /><text x="370" y="249">NIL</text></g>
+    </svg>
   </div>
   <div>
     <h3 class="accent">用颜色保持近似平衡</h3>

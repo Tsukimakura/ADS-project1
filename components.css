@@ -55,9 +55,9 @@
 .callout.warning-box { border-left-color: var(--orange); background: #fff6eb; }
 .code-layout { gap: 34px; }
 .stack-list { display: flex; gap: 11px; flex-direction: column; }
-.stack-list > div { display: grid; grid-template-columns: 125px 1fr; gap: 13px; padding: 13px 15px; border: 1px solid var(--border); background: var(--panel); }
-.stack-list b { color: var(--blue); font-size: 0.57em; }
-.stack-list span { color: var(--muted); font-size: 0.51em; }
+.stack-list > div { display: grid; grid-template-columns: 180px minmax(0, 1fr); align-items: center; gap: 12px; padding: 13px 15px; border: 1px solid var(--border); background: var(--panel); }
+.stack-list b { color: var(--blue); font-size: 18px; white-space: nowrap; }
+.stack-list span { color: var(--muted); font-size: 17px; line-height: 1.45; }
 
 .complexity { display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; margin-top: 20px; padding: 13px 16px; border: 1px solid var(--border); background: var(--panel); }
 .complexity span { color: var(--muted); font-size: 0.54em; }
@@ -80,14 +80,15 @@
 .splay-diagram .reverse span:nth-child(3) { margin-left: 56px; }
 .splay-diagram > b { color: var(--blue); }
 .splay-diagram > p { position: absolute; right: 20px; bottom: 14px; left: 20px; }
-.rb-diagram { gap: 3px; }
-.rb-diagram > div { display: flex; gap: 105px; justify-content: center; }
-.rb-diagram > div span { display: grid; width: 46px; height: 46px; place-items: center; border-radius: 50%; font-size: 0.46em; font-weight: 700; }
-.black-node { border: 2px solid #333; color: #fff; background: #333; }
-.red-node { border: 2px solid var(--red); color: #fff; background: var(--red); }
-.rb-diagram > i { color: #7a8490; font-family: monospace; font-size: 0.65em; font-style: normal; }
-.rb-diagram .nil-row { gap: 38px; }
-.rb-diagram .nil-row span { width: 42px; height: 27px; border: 1px solid #9aa1aa; border-radius: 3px; color: #555; background: #eee; font-size: 0.33em; }
+.rb-diagram { padding: 18px 22px; }
+.rb-tree-svg { display: block; width: 100%; max-width: 420px; height: auto; overflow: visible; }
+.rb-edges line { stroke: #8a95a3; stroke-width: 2.5; }
+.rb-node circle { stroke-width: 2; }
+.rb-node-black circle { fill: #303030; stroke: #303030; }
+.rb-node-red circle { fill: var(--red); stroke: var(--red); }
+.rb-node text { fill: #fff; font-family: var(--r-code-font); font-size: 20px; font-weight: 700; text-anchor: middle; }
+.rb-nil rect { fill: #f3f4f6; stroke: #9aa1aa; stroke-width: 1.5; }
+.rb-nil text { fill: #4b5563; font-family: var(--r-code-font); font-size: 15px; font-weight: 600; text-anchor: middle; }
 
 .bplus-diagram { display: flex; margin: 0 25px; min-height: 250px; align-items: center; justify-content: center; flex-direction: column; border: 1px solid var(--border); border-radius: 7px; background: var(--panel); }
 .bplus-root { display: flex; }
