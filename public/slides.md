@@ -6,9 +6,7 @@
 
 <p class="subtitle">普通二叉搜索树、AVL 树、伸展树、红黑树与 B+ 树</p>
 
-<div class="badge-row">
-  <span>5 类数据结构</span><span>6 种配置</span><span>126 组测量</span>
-</div>
+<div class="team-info"><b>第 16 组</b><span>何怡飞（组长） · 郑宇杰 · 陈灵石</span></div>
 
 <p class="source-credit">版式参考：<a href="https://github.com/TonyCrane/slide-template">TonyCrane/slide-template</a></p>
 
@@ -257,9 +255,9 @@ Note:
 ## 为什么测试两种 B+ 树阶数？
 
 <div class="order-comparison">
-  <article class="order-3"><strong>3</strong><h3>低扇出</h3><p>每个节点最多 3 个孩子</p><ul><li>层数更多</li><li>内存分配更多</li><li>分裂与合并更频繁</li></ul></article>
+  <article class="order-3"><h3>低扇出</h3><p>每个节点最多 3 个孩子</p><ul><li>层数更多</li><li>内存分配更多</li><li>分裂与合并更频繁</li></ul></article>
   <b>对比</b>
-  <article class="order-100"><strong>100</strong><h3>高扇出</h3><p>每个节点最多 100 个孩子</p><ul><li>树更浅</li><li>数组连续存储</li><li>节点内部使用二分查找</li></ul></article>
+  <article class="order-100"><h3>高扇出</h3><p>每个节点最多 100 个孩子</p><ul><li>树更浅</li><li>数组连续存储</li><li>节点内部使用二分查找</li></ul></article>
 </div>
 
 <div class="callout">两者使用相同实现，只改变 <code>order</code> 参数。</div>
@@ -308,9 +306,9 @@ Note:
 ## 三种规定负载
 
 <div class="scenario-grid">
-  <article><b>01</b><h3>递增插入 → 同序删除</h3><code>0 1 2 … N−1</code><code class="delete">0 1 2 … N−1</code></article>
-  <article><b>02</b><h3>递增插入 → 逆序删除</h3><code>0 1 2 … N−1</code><code class="delete">N−1 … 2 1 0</code></article>
-  <article><b>03</b><h3>随机插入 → 随机删除</h3><code>7 1 9 3 …</code><code class="delete">4 9 0 7 …</code></article>
+  <article><h3>递增插入 → 同序删除</h3><code>0 1 2 … N−1</code><code class="delete">0 1 2 … N−1</code></article>
+  <article><h3>递增插入 → 逆序删除</h3><code>0 1 2 … N−1</code><code class="delete">N−1 … 2 1 0</code></article>
+  <article><h3>随机插入 → 随机删除</h3><code>7 1 9 3 …</code><code class="delete">4 9 0 7 …</code></article>
 </div>
 
 <div class="callout">每个数组都恰好包含 N 个互不相同的整数 0 … N−1。</div>
@@ -629,7 +627,7 @@ Note:
 </div>
 
 Note:
-一句话总结：结构保证决定上限，工作负载决定实际形状，实现细节决定常数。
+总结时结合三组实测结果，说明不同数据结构在不同输入顺序下的实际表现。
 
 <!-- v -->
 
@@ -657,8 +655,6 @@ Note:
 # 谢谢！
 
 <p class="subtitle">欢迎提问与讨论</p>
-
-<div class="final-equation"><span>结构保证</span><b>×</b><span>工作负载</span><b>×</b><span>实现细节</span></div>
 
 Note:
 结束。回答问题时可以结合二维章节结构，快速回到对应的实现、实验方法或结果页面。
