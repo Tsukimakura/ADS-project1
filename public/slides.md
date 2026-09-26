@@ -10,6 +10,8 @@
   <span>5 类数据结构</span><span>6 种配置</span><span>126 组测量</span>
 </div>
 
+<p class="source-credit">版式参考：<a href="https://github.com/TonyCrane/slide-template">TonyCrane/slide-template</a></p>
+
 Note:
 开场：我们的目标不是只背复杂度，而是观察同一批操作如何让不同树产生完全不同的结构和运行时间。
 本次展示将依次介绍项目基础、数据结构实现、实验设计、实验结果和总结。
@@ -33,7 +35,7 @@ Note:
 
 <div class="eyebrow">01 · 项目基础</div>
 
-# 项目要回答的问题
+## 项目要回答的问题
 
 <div class="question-box">
   <div class="question-mark">?</div>
@@ -53,7 +55,7 @@ Note:
 
 <div class="eyebrow">01 · 项目基础</div>
 
-# 实验规模
+## 实验规模
 
 <div class="stats">
   <div><b>5</b><span>类搜索树</span></div>
@@ -77,7 +79,7 @@ B+ 树采用相同算法测试两个阶数，因此五类数据结构对应六�
 
 <div class="eyebrow">01 · 项目基础</div>
 
-# 统一的测试接口
+## 统一的测试接口
 
 <div class="two-column code-layout">
 
@@ -123,7 +125,7 @@ Note:
 
 <div class="eyebrow">02 · 数据结构实现</div>
 
-# 普通二叉搜索树（BST）
+## 普通二叉搜索树（BST）
 
 <div class="two-column">
   <div>
@@ -149,7 +151,7 @@ Note:
 
 <div class="eyebrow">02 · 数据结构实现</div>
 
-# AVL 树
+## AVL 树
 
 <div class="two-column">
   <div class="diagram-panel formula-panel">
@@ -176,7 +178,7 @@ AVL 最严格地限制高度，查找路径短且稳定；代价是更新高度�
 
 <div class="eyebrow">02 · 数据结构实现</div>
 
-# 伸展树（Splay Tree）
+## 伸展树（Splay Tree）
 
 <div class="two-column">
   <div>
@@ -202,7 +204,7 @@ Note:
 
 <div class="eyebrow">02 · 数据结构实现</div>
 
-# 红黑树（Red-Black Tree）
+## 红黑树（Red-Black Tree）
 
 <div class="two-column">
   <div class="diagram-panel rb-diagram">
@@ -231,7 +233,7 @@ Note:
 
 <div class="eyebrow">02 · 数据结构实现</div>
 
-# B+ 树
+## B+ 树
 
 <div class="bplus-diagram">
   <div class="bplus-root"><span>20</span><span>50</span><span>80</span></div>
@@ -252,7 +254,7 @@ Note:
 
 <div class="eyebrow">02 · 数据结构实现</div>
 
-# 为什么测试两种 B+ 树阶数？
+## 为什么测试两种 B+ 树阶数？
 
 <div class="order-comparison">
   <article class="order-3"><strong>3</strong><h3>低扇出</h3><p>每个节点最多 3 个孩子</p><ul><li>层数更多</li><li>内存分配更多</li><li>分裂与合并更频繁</li></ul></article>
@@ -269,7 +271,7 @@ Note:
 
 <div class="eyebrow">02 · 数据结构实现</div>
 
-# 理论复杂度预期
+## 理论复杂度预期
 
 | 数据结构 | 查询 | 插入 | 删除 | 结构保证 |
 |---|---:|---:|---:|---|
@@ -303,7 +305,7 @@ Note:
 
 <div class="eyebrow">03 · 实验设计</div>
 
-# 三种规定负载
+## 三种规定负载
 
 <div class="scenario-grid">
   <article><b>01</b><h3>递增插入 → 同序删除</h3><code>0 1 2 … N−1</code><code class="delete">0 1 2 … N−1</code></article>
@@ -320,7 +322,7 @@ malloc 的原始内容不会被使用。make_keys 先完整写入 0 到 N−1，
 
 <div class="eyebrow">03 · 实验设计</div>
 
-# 基准测试流程
+## 基准测试流程
 
 <div class="pipeline">
   <div><b>1</b><span>分配数组</span></div><i>→</i>
@@ -343,7 +345,7 @@ Note:
 
 <div class="eyebrow">03 · 实验设计</div>
 
-# 计时与 CSV 输出
+## 计时与 CSV 输出
 
 <div class="two-column code-layout">
 
@@ -374,7 +376,7 @@ CSV 一共 126 条测量。current_time_ns 使用单调时钟，避免系统时�
 
 <div class="eyebrow">03 · 实验设计</div>
 
-# 公平性控制
+## 公平性控制
 
 <div class="check-grid">
   <article><b>✓</b><div><h3>相同键集合</h3><p>每棵树都接收 0 … N−1。</p></div></article>
@@ -408,7 +410,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果</div>
 
-# 如何阅读图表
+## 如何阅读图表
 
 <div class="cards three plot-guide">
   <article><b>X</b><h3>输入规模 N</h3><p>从 1 千到 10 万，使用对数坐标</p></article>
@@ -427,7 +429,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果 · 负载一</div>
 
-# 递增插入 → 同序删除
+## 递增插入 → 同序删除
 
 <img class="chart" src="charts/increasing_same.svg" alt="递增插入并同序删除的运行时间折线图">
 
@@ -438,7 +440,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果 · 负载一</div>
 
-# 为什么会出现这样的结果？
+## 为什么会出现这样的结果？
 
 <div class="result-hero">
   <div><span>普通 BST · N=10 万</span><b>7.754 s</b></div><i>对比</i>
@@ -461,7 +463,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果 · 负载二</div>
 
-# 递增插入 → 逆序删除
+## 递增插入 → 逆序删除
 
 <img class="chart" src="charts/increasing_reverse.svg" alt="递增插入并逆序删除的运行时间折线图">
 
@@ -472,7 +474,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果 · 负载二</div>
 
-# 逆序删除进一步放大链式退化
+## 逆序删除进一步放大链式退化
 
 <div class="result-hero">
   <div><span>普通 BST · N=10 万</span><b>17.294 s</b></div><i>对比</i>
@@ -495,7 +497,7 @@ AVL 和红黑树靠高度约束稳定。Splay 也适合这个局部访问模式�
 
 <div class="eyebrow">04 · 实验结果 · 负载三</div>
 
-# 随机插入 → 随机删除
+## 随机插入 → 随机删除
 
 <img class="chart" src="charts/random_random.svg" alt="随机插入并随机删除的运行时间折线图">
 
@@ -506,7 +508,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果 · 负载三</div>
 
-# 随机顺序改变了排名
+## 随机顺序改变了排名
 
 <div class="ranking">
   <div class="first"><span>1</span><b>100 阶 B+ 树</b><em>15.11 ms</em></div>
@@ -526,7 +528,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果</div>
 
-# N = 100,000 时的结果
+## N = 100,000 时的结果
 
 <table class="result-table">
   <thead><tr><th>数据结构</th><th>递增 / 同序</th><th>递增 / 逆序</th><th>随机 / 随机</th></tr></thead>
@@ -549,7 +551,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果</div>
 
-# B+ 树阶数带来的差异
+## B+ 树阶数带来的差异
 
 <div class="big-ratio">3 阶 <span>→</span> 100 阶</div>
 
@@ -568,7 +570,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果</div>
 
-# 理论解释趋势，实现决定差距
+## 理论解释趋势，实现决定差距
 
 <div class="equation-cards">
   <article><span>渐进结构</span><h3>曲线会以多快的速度增长？</h3><p>普通 BST 的链式退化产生了唯一灾难性的 O(N²) 序列。</p></article>
@@ -585,7 +587,7 @@ Note:
 
 <div class="eyebrow">04 · 实验结果</div>
 
-# 当前实验的边界
+## 当前实验的边界
 
 <div class="limits">
   <article><b>01</b><h3>只运行一次</h3><p>暂时没有方差或置信区间。</p></article>
@@ -618,7 +620,7 @@ Note:
 
 <div class="eyebrow">05 · 总结</div>
 
-# 三点结论
+## 三点结论
 
 <div class="conclusions">
   <article><b>1</b><div><h3>平衡机制能够抵御不利顺序</h3><p>AVL、红黑树、伸展树和 B+ 树都避免了普通 BST 的数秒级退化。</p></div></article>
@@ -633,7 +635,7 @@ Note:
 
 <div class="eyebrow">05 · 总结</div>
 
-# 项目产物
+## 项目产物
 
 <div class="cards three project-output">
   <article><b>01</b><h3>数据结构实现</h3><p>五类搜索树及完整的插入、删除、查询与销毁操作。</p></article>

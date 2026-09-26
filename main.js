@@ -5,13 +5,13 @@ import Notes from 'reveal.js/plugin/notes'
 
 import 'reveal.js/reveal.css'
 import 'reveal.js/theme/simple.css'
-import 'reveal.js/plugin/highlight/monokai.css'
 import './style.css'
+import './components.css'
 
 const deck = new Reveal({
-  width: 1280,
-  height: 720,
-  margin: 0,
+  width: 1000,
+  height: 700,
+  margin: 0.04,
   hash: true,
   history: true,
   controls: true,
@@ -24,10 +24,26 @@ const deck = new Reveal({
   touch: true,
   overview: true,
   transition: 'slide',
+  transitionSpeed: 'fast',
   backgroundTransition: 'fade',
   navigationMode: 'default',
   pdfSeparateFragments: false,
   plugins: [Markdown, Highlight, Notes],
 })
 
-deck.initialize()
+function syncSlideFrame() {
+  const slides = document.querySelector('.slides')
+  const backgrounds = document.querySelector('.backgrounds')
+  if (slides && backgrounds) backgrounds.style.cssText = slides.style.cssText
+}
+
+deck.initialize().then(() => {
+  syncSlideFrame()
+  if (globalThis.Heti) new globalThis.Heti('.slides').autoSpacing()
+})
+
+deck.on('overviewshown', () => {
+  document.querySelector('.backgrounds')?.removeAttribute('style')
+})
+deck.on('overviewhidden', syncSlideFrame)
+deck.on('resize', syncSlideFrame)
