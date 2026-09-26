@@ -1,0 +1,36 @@
+name: Check presentation
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Regenerate charts
+        run: npm run charts
+
+      - name: Check generated charts are committed
+        run: git diff --exit-code -- public/charts
+
+      - name: Validate chapter structure
+        run: npm run check:slides
+
+      - name: Build presentation
+        run: npm run build -- --base="/${{ github.event.repository.name }}/"
