@@ -1,10 +1,10 @@
 import Reveal from 'reveal.js'
-import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js'
-import Highlight from 'reveal.js/plugin/highlight/highlight.esm.js'
-import Notes from 'reveal.js/plugin/notes/notes.esm.js'
+import Markdown from 'reveal.js/plugin/markdown'
+import Highlight from 'reveal.js/plugin/highlight'
+import Notes from 'reveal.js/plugin/notes'
 
-import 'reveal.js/dist/reveal.css'
-import 'reveal.js/dist/theme/black.css'
+import 'reveal.js/reveal.css'
+import 'reveal.js/theme/black.css'
 import 'reveal.js/plugin/highlight/monokai.css'
 import './style.css'
 
