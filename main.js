@@ -9,15 +9,24 @@ import 'reveal.js/plugin/highlight/monokai.css'
 import './style.css'
 
 const deck = new Reveal({
+  width: 1280,
+  height: 720,
+  margin: 0,
   hash: true,
   history: true,
   controls: true,
   controlsTutorial: true,
+  controlsBackArrows: 'faded',
   progress: true,
+  slideNumber: 'c/t',
+  showSlideNumber: 'all',
   center: false,
+  touch: true,
+  overview: true,
   transition: 'slide',
   backgroundTransition: 'fade',
   navigationMode: 'default',
+  pdfSeparateFragments: false,
   plugins: [Markdown, Highlight, Notes],
 })
 
