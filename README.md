@@ -10,13 +10,18 @@
 
 仓库只保存演示文稿、实验数据副本、图表脚本和部署配置，不修改原 C 项目。
 
+## 版式来源
+
+页面排版参考并改编自 [TonyCrane/slide-template](https://github.com/TonyCrane/slide-template)，具体参考版本和改编范围见 [ATTRIBUTION.md](ATTRIBUTION.md)。封面也保留了可见的来源链接。
+
 ## 项目结构
 
 ```text
 .
 ├── index.html                  # Reveal.js 页面和二维分隔规则
 ├── main.js                     # Reveal.js 初始化与插件配置
-├── style.css                  # 演示文稿视觉样式
+├── style.css                  # 参考模板的基础排版
+├── components.css             # 本项目的数据结构与图表组件样式
 ├── public/
 │   ├── slides.md              # 6 个水平章节、34 页和 speaker notes
 │   └── charts/                # 自动生成的性能图
