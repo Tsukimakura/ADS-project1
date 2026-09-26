@@ -118,4 +118,4 @@ Pull Request 会自动检查图表、二维结构和生产构建；合并到 `ma
 https://<owner>.github.io/ADS-project1/
 ```
 
-首次部署前，仓库管理员需要在 `Settings → Pages` 中将构建来源设为 `GitHub Actions`。这是一次性设置：GitHub 不允许默认的 Actions token 自动创建 Pages 站点；完成设置后，后续推送会自动部署。
+如果 Pages 没有自动启用，在仓库 `Settings → Pages` 中将构建来源设为 `GitHub Actions`。
