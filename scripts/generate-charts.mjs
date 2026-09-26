@@ -12,25 +12,26 @@ const rows = lines.map((line) => {
 })
 
 const trees = [
-  ['Unbalanced BST', '#fb7185'],
-  ['AVL', '#60a5fa'],
-  ['Splay', '#2dd4bf'],
-  ['Red-Black', '#c084fc'],
-  ['B+ (order 3)', '#fb923c'],
-  ['B+ (order 100)', '#facc15'],
+  ['Unbalanced BST', '普通 BST', '#c43d4f'],
+  ['AVL', 'AVL 树', '#3274b5'],
+  ['Splay', '伸展树', '#16877c'],
+  ['Red-Black', '红黑树', '#7b55aa'],
+  ['B+ (order 3)', '3 阶 B+ 树', '#cf6f21'],
+  ['B+ (order 100)', '100 阶 B+ 树', '#9a7b00'],
 ]
 
 const scenarios = {
-  increasing_same: 'Increasing insert · increasing delete',
-  increasing_reverse: 'Increasing insert · reverse delete',
-  random_random: 'Random insert · random delete',
+  increasing_same: '递增插入 · 同序删除',
+  increasing_reverse: '递增插入 · 逆序删除',
+  random_random: '随机插入 · 随机删除',
 }
 
 const width = 1200
-const height = 620
-const margin = { left: 92, right: 42, top: 90, bottom: 116 }
+const height = 520
+const margin = { left: 88, right: 34, top: 58, bottom: 98 }
 const plotWidth = width - margin.left - margin.right
 const plotHeight = height - margin.top - margin.bottom
+const font = `'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif`
 const escapeXml = (text) => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
 const log10 = (value) => Math.log(value) / Math.LN10
 
@@ -46,41 +47,42 @@ function makeChart(scenario, title) {
   const y = (value) => margin.top + ((yMaxPower - log10(value)) / (yMaxPower - yMinPower)) * plotHeight
   const svg = [
     `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeXml(title)}">`,
-    '<rect width="1200" height="620" rx="24" fill="#0b1220"/>',
-    `<text x="${margin.left}" y="42" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700">${escapeXml(title)}</text>`,
-    `<text x="${margin.left}" y="69" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="16">Total time · logarithmic axes · lower is better</text>`,
+    `<rect width="${width}" height="${height}" fill="#fff"/>`,
+    `<text x="${margin.left}" y="25" fill="#222" font-family="${font}" font-size="18" font-weight="600">${escapeXml(title)}</text>`,
+    `<text x="${width - margin.right}" y="25" text-anchor="end" fill="#667085" font-family="${font}" font-size="14">总时间 · 双对数坐标 · 越低越好</text>`,
   ]
 
   for (let power = yMinPower; power <= yMaxPower; power += 1) {
     const value = 10 ** power
     const py = y(value)
-    svg.push(`<line x1="${margin.left}" y1="${py}" x2="${width - margin.right}" y2="${py}" stroke="#243148"/>`)
-    svg.push(`<text x="${margin.left - 14}" y="${py + 5}" text-anchor="end" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">${value >= 1000 ? `${value / 1000}s` : `${value}ms`}</text>`)
+    const label = value >= 1000 ? `${value / 1000} 秒` : `${value} ms`
+    svg.push(`<line x1="${margin.left}" y1="${py}" x2="${width - margin.right}" y2="${py}" stroke="#d9dee5"/>`)
+    svg.push(`<text x="${margin.left - 12}" y="${py + 5}" text-anchor="end" fill="#667085" font-family="${font}" font-size="13">${label}</text>`)
   }
 
   for (const size of sizes) {
     const px = x(size)
-    svg.push(`<line x1="${px}" y1="${margin.top}" x2="${px}" y2="${height - margin.bottom}" stroke="#18243a"/>`)
-    svg.push(`<text x="${px}" y="${height - margin.bottom + 28}" text-anchor="middle" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="14">${size / 1000}k</text>`)
+    svg.push(`<line x1="${px}" y1="${margin.top}" x2="${px}" y2="${height - margin.bottom}" stroke="#edf0f3"/>`)
+    svg.push(`<text x="${px}" y="${height - margin.bottom + 24}" text-anchor="middle" fill="#667085" font-family="${font}" font-size="13">${size / 1000}k</text>`)
   }
 
-  for (const [tree, color] of trees) {
+  for (const [sourceName, label, color] of trees) {
     const points = selected
-      .filter((row) => row.tree === tree)
+      .filter((row) => row.tree === sourceName)
       .sort((a, b) => Number(a.n) - Number(b.n))
       .map((row) => ({ n: Number(row.n), ms: Number(row.total_ns) / 1_000_000 }))
     const path = points.map((point, index) => `${index ? 'L' : 'M'} ${x(point.n).toFixed(1)} ${y(point.ms).toFixed(1)}`).join(' ')
-    svg.push(`<path d="${path}" fill="none" stroke="${color}" stroke-width="3.5" stroke-linejoin="round"/>`)
+    svg.push(`<path d="${path}" fill="none" stroke="${color}" stroke-width="3" stroke-linejoin="round"/>`)
     for (const point of points) {
-      svg.push(`<circle cx="${x(point.n).toFixed(1)}" cy="${y(point.ms).toFixed(1)}" r="5" fill="${color}" stroke="#0b1220" stroke-width="2"><title>${escapeXml(tree)}: N=${point.n}, ${point.ms.toFixed(3)} ms</title></circle>`)
+      svg.push(`<circle cx="${x(point.n).toFixed(1)}" cy="${y(point.ms).toFixed(1)}" r="4.5" fill="#fff" stroke="${color}" stroke-width="2.5"><title>${escapeXml(label)}：N=${point.n}，${point.ms.toFixed(3)} ms</title></circle>`)
     }
   }
 
-  trees.forEach(([tree, color], index) => {
-    const lx = margin.left + (index % 3) * 340
-    const ly = height - 62 + Math.floor(index / 3) * 27
-    svg.push(`<line x1="${lx}" y1="${ly}" x2="${lx + 28}" y2="${ly}" stroke="${color}" stroke-width="4"/>`)
-    svg.push(`<text x="${lx + 38}" y="${ly + 5}" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="15">${escapeXml(tree)}</text>`)
+  trees.forEach(([, label, color], index) => {
+    const lx = margin.left + (index % 3) * 350
+    const ly = height - 58 + Math.floor(index / 3) * 25
+    svg.push(`<line x1="${lx}" y1="${ly}" x2="${lx + 26}" y2="${ly}" stroke="${color}" stroke-width="4"/>`)
+    svg.push(`<text x="${lx + 36}" y="${ly + 5}" fill="#344054" font-family="${font}" font-size="14">${escapeXml(label)}</text>`)
   })
 
   svg.push('</svg>')
@@ -92,4 +94,4 @@ for (const [scenario, title] of Object.entries(scenarios)) {
   writeFileSync(join(root, `public/charts/${scenario}.svg`), makeChart(scenario, title))
 }
 
-console.log('Generated 3 benchmark charts in public/charts/')
+console.log('已在 public/charts/ 中生成 3 张性能图表。')
